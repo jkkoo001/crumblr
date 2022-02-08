@@ -1,126 +1,38 @@
-
 class Product {
-
-
-
-
-    productItems = [
-
+    constructor() {
+        let currentId = 1;
+        this.items = [];
+        this.currentId = currentId;
+    }
+    addProduct(name, category, description, image, price, createdAt)
     {
-    id: 1,
-    name: 'Tayto',
-    category : 'bread',
-    description: 'Cheese & Onion Chips',
-    image: '/images/bread/bagel.jpg',
-    price:5,
-    createdAt: '2020-09-20'
-
-},
-
- {
-    id: 2,
-    name: 'Tayto',
-    category : 'bread',
-    description: 'Cheese & Onion Chips',
-    image: '/images/bread/baguette.jpg',
-    price:5,
-    createdAt: '2020-09-20'
-
-},
-
- {
-    id: 3,
-    name: 'Tayto',
-    category : 'bread',
-    description: 'Cheese & Onion Chips',
-    image: '/images/bread/brioche.jpg',
-    price:5,
-    createdAt: '2020-09-20'
-
-},
-
- {
-    id: 4,
-    name: 'Tayto',
-    category : 'bread',
-    description: 'Cheese & Onion Chips',
-    image: '/images/bread/croissant.jpg',
-    price:5,
-    createdAt: '2020-09-20'
-
-}
-
-    ];
-
-
-
-
-
-
-    constructor(){}
-
-
-
-    addProduct(name,category, description, image , price, createdAt){
-
         const item = {
-
-
-             name: name,
-            category : category,
+            id: this.currentId++,
+            name: name,
+            category: category,
             description: description,
             image: image,
             price: price,
             createdAt: createdAt
+        };
 
-        }
-
-     this.productItems.push(item);
+        this.items.push(item);
     }
-
-
-    // displayProduct(){
-
-    //     console.log(this.productItems);
-
-    //     let productDetails = "";
-    //     let index = 0;
-    //     let detailBtnId = "";
-
-    //     this.productItems.forEach(item=>{
-
-    //         detailBtnId = "item " + index;
-
-    //         productDetails += `
-    //         <div class="col-lg-4  col-md-4 col-6">
-    //             <div class="card" style="width: 15rem;">
-    //               <img src="images/cake/choc-cara-cupcakes.jpg" class="card-img-top" alt="bagel">
-    //               <div class="card-body">
-    //                 <h5 class="card-title">Chocolate Caramel Cupcakes</h5>
-    //                 <h5>$3</h5>
-
-    //                 <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cupcakeModal">Details</a>
-    //               </div>
-    //             </div>
-
-    //         </div>
-
-    //         `
-
-
-
-
-
-
-
-    //     })
-    // }
 }
-const product = new Product();
-product.addProduct('22222',
-            'bread',
-             'Cheese & Onion Chips',
-            '/images/bread/bagel.jpg',
-            5,
-            '2020-09-20')
-console.log(product.productItems);
+
+
+const product1 = new Product();
+product1.addProduct("Baguette", "Bread", "This is a baguette", "images/bread/baguette.jpg", 6.00, "2022-02-08");
+console.log(product1.items);
+
+const product2 = new Product();
+product2.addProduct("Bagel", "Bread", "This is a bagel", "images/bread/bagel.jpg", 5.00, "2022-02-08");
+console.log(product2.items);
+
+const product3 = new Product();
+product3.addProduct("Brioche", "Bread", "This is a brioche", "images/bread/brioche.jpg", 3.00, "2022-02-08");
+console.log(product3.items);
+
+const product4 = new Product();
+product4.addProduct("Croissant", "Bread", "This is a croissant", "images/bread/croissant.jpg", 4.00, "2022-02-08");
+console.log(product4.items);
