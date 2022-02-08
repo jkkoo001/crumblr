@@ -1,8 +1,8 @@
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.about-text, .col {
+.about-text, .col, .photo {
     text-align: center;
 }
 
@@ -24,4 +24,21 @@ h1, h2, h3, h4 {
     color: black;
 }
 
+#about-us {
+    padding-left: 20%;
+    padding-right: 20%;
+}
 
+#pillars, #values {
+    background: rgba(250, 223, 70, 0.3);
+    margin: 5%;
+    padding: 40px;
+}
+
+#purpose {
+    padding-top: 50px;
+}
+
+.photo {
+    padding-top: 50px;
+}
