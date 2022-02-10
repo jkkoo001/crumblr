@@ -70,3 +70,13 @@ h1, h2, h3, h4, h5, h6 {
 #team {
     margin: 50px;
 }
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 720px) {
+    .welcome-text {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
