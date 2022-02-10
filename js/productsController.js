@@ -30,18 +30,40 @@ class Product {
 
             productDetails += `
             <div class="col-lg-4  col-md-4 col-6">
-                <div class="card" style="width: 15rem;">
+                <div class="card text-center" style="width: 15rem;">
                   <img src="${item.image}" class="card-img-top" alt="${item.name}">
                   <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <h5>$${item.price}</h5>
 
-                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cupcakeModal">Details</a>
+                    <a id="${detailsBtnId}" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">Details</a>
                   </div>
                 </div>
 
             </div>`;
             index++;
-        })
+        });
+
+        document.querySelector("#row").innerHTML = productDetails;
+
+        index = 0;
+        this.productItems.forEach(item => {
+            detailsBtnId = "item" + index;
+
+            document.getElementById(detailsBtnId).addEventListener("click", function() {displayItemDetail(item);});
+
+            index++;
+
+        });
+
     }   // end of displayProduct()
 }   // end of class Product
+
+
+//Start of event handler function
+const displayItemDetail = (item) => {
+    document.querySelector("#itemName").innerText = item.name;
+    document.querySelector("#itemImage").src = item.image;
+    document.querySelector("#itemDescription").innerText = item.description;
+    document.querySelector("#itemPrice").innerText = item.price;
+} //End of event handler function
