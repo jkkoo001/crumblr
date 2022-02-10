@@ -62,10 +62,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal-header > h3 {
-margin-left: auto;
-margin-right: auto;
-margin-top: 20px;
-
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 #team {
