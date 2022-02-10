@@ -1,12 +1,6 @@
-
-
-
 const productList = [];
 
-
-
-function addProduct()
-{
+function addProduct() {
 
     const name = document.querySelector("#productName").value;
     const category = document.querySelector("#category").value;
@@ -14,23 +8,19 @@ function addProduct()
     const image = document.querySelector("#formFileLg").value;
     const price = document.querySelector("#price").value;
 
+    const productDetails = {
+        name: name,
+        category:category,
+        description: description,
+        image: image,
+        price: price,
+    }
 
-        const productDetails = {
-            name: name,
-           category:category,
-            description: description,
-            image: image,
-            price: price,
+    productList.push(productDetails);
+    console.log(productList);
 
-        }
-
-        productList.push(productDetails);
-        console.log(productList);
-
-        alert("Product Added !");
-
+    alert("Product Added !");
 
 } //End of addProduct function
-
 
 addProduct();
