@@ -27,7 +27,7 @@ function addProduct()
         productList.push(productDetails);
         console.log(productList);
 
-        alert("Thank you for your submission");
+        alert("Product Added !");
 
 
 } //End of addProduct function

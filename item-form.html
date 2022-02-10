@@ -52,10 +52,10 @@
                 <!-- Start of Add Product Form -->
                 <form onsubmit="event.preventDefault(); addProduct();">
                     <div class="form-floating mb-3 input-group-lg">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="productName" required /><label for="floatingInput">Product Name</label>
+                        <input type="text" class="form-control" id="productName" placeholder="productName" required /><label for="floatingInput">Product Name</label>
                     </div>
                     <div>
-                        <select class="form-select form-select-md mb-3" aria-label="select category" required >
+                        <select id="category" class="form-select form-select-md mb-3" aria-label="select category" required >
                         <option value="">Select Category</option>
                         <option value="1">Bread</option>
                         <option value="2">Cakes</option>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-floating mb-3 input-group-lg">
                         <div class="form-floating mb-3">
-                            <input type="number" min="1" class="form-control" id="floatingInput" placeholder="product price" required />
+                            <input type="number" min="1" class="form-control" id="price" placeholder="product price" required />
                             <label for="floatingInput">Price</label>
                         </div>
                     </div>
@@ -96,6 +96,9 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <script src="js/productForm.js"></script>
 
 </body>
 </html>
