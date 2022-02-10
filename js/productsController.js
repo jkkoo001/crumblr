@@ -29,9 +29,9 @@ class Product {
             detailsBtnId = "item" + index;
 
             productDetails += `
-            <div class="col-lg-4  col-md-4 col-6">
-                <div class="card text-center" style="width: 15rem;">
-                  <img src="${item.image}" class="card-img-top" alt="${item.name}">
+            <div class="col-lg-3 col-md-4 col-12 mt-5">
+                <div class="card text-center mx-auto" style="width: 15rem;">
+                  <img src="${item.image}" class="card-img-top" alt="${item.name}" height="300" style="object-fit: cover;">
                   <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <h5>$${item.price}</h5>

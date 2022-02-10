@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .about-text, .col, .photo {
@@ -14,10 +15,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-caption > h5 {
     font-size: 5vw;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .carousel-caption > p {
     font-size: 3vw;
+    text-shadow: 2px 2px 5px #000;
+}
+.carousel-caption > h1, .carousel-caption > h3, .carousel-caption > h4 {
+    text-shadow: 2px 2px 5px #000;
 }
 
 .nav-link {
@@ -39,8 +45,20 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 50px;
 }
 
+#category-top {
+    margin: 50px 5% 0 5%;
+}
+
 .photo {
     padding-top: 50px;
+}
+
+.jumbotron {
+    padding: 50px;  
+}
+
+.container {
+    margin-top: 50px;
 }
 
 #team {
