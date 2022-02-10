@@ -1,38 +1,69 @@
 class Product {
-    constructor() {
-        let currentId = 1;
-        this.items = [];
-        this.currentId = currentId;
-    }
-    addProduct(name, category, description, image, price, createdAt)
-    {
+
+    productItems = [];
+
+    constructor() {}
+
+    addProduct(name, category, description, image, price) {
         const item = {
-            id: this.currentId++,
             name: name,
             category: category,
             description: description,
             image: image,
             price: price,
-            createdAt: createdAt
         };
 
-        this.items.push(item);
-    }
-}
+        this.productItems.push(item);
+
+    }   // end of addProduct()
+
+    displayProduct() {
+        console.log(this.productItems);
+
+        let productDetails = "";
+
+        let index = 0;
+        let detailsBtnId = "";
+
+        this.productItems.forEach (item => {
+            detailsBtnId = "item" + index;
+
+            productDetails += `
+            <div class="col-lg-4  col-md-4 col-6">
+                <div class="card text-center" style="width: 15rem;">
+                  <img src="${item.image}" class="card-img-top" alt="${item.name}">
+                  <div class="card-body">
+                    <h5 class="card-title">${item.name}</h5>
+                    <h5>$${item.price}</h5>
+
+                    <a id="${detailsBtnId}" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">Details</a>
+                  </div>
+                </div>
+
+            </div>`;
+            index++;
+        });
+
+        document.querySelector("#row").innerHTML = productDetails;
+
+        index = 0;
+        this.productItems.forEach(item => {
+            detailsBtnId = "item" + index;
+
+            document.getElementById(detailsBtnId).addEventListener("click", function() {displayItemDetail(item);});
+
+            index++;
+
+        });
+
+    }   // end of displayProduct()
+}   // end of class Product
 
 
-const product1 = new Product();
-product1.addProduct("Baguette", "Bread", "This is a baguette", "images/bread/baguette.jpg", 6.00, "2022-02-08");
-console.log(product1.items);
-
-const product2 = new Product();
-product2.addProduct("Bagel", "Bread", "This is a bagel", "images/bread/bagel.jpg", 5.00, "2022-02-08");
-console.log(product2.items);
-
-const product3 = new Product();
-product3.addProduct("Brioche", "Bread", "This is a brioche", "images/bread/brioche.jpg", 3.00, "2022-02-08");
-console.log(product3.items);
-
-const product4 = new Product();
-product4.addProduct("Croissant", "Bread", "This is a croissant", "images/bread/croissant.jpg", 4.00, "2022-02-08");
-console.log(product4.items);
+//Start of event handler function
+const displayItemDetail = (item) => {
+    document.querySelector("#itemName").innerText = item.name;
+    document.querySelector("#itemImage").src = item.image;
+    document.querySelector("#itemDescription").innerText = item.description;
+    document.querySelector("#itemPrice").innerText = item.price;
+} //End of event handler function
