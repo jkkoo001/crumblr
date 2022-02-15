@@ -71,7 +71,18 @@ h1, h2, h3, h4, h5, h6 {
     margin: 50px;
 }
 
+<<<<<<< HEAD
 .team-info {
     width: 250px;
     border: 15px solid rgba(250, 223, 70, 0.3);
+=======
+
+/* Mobile Styles */
+@media only screen and (max-width: 720px) {
+    .welcome-text {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+>>>>>>> 1386188f3819d33bb6ab8834b0aef937abb8ccc4
 }
